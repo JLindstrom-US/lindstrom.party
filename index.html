@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to my personal testing website - I use this website to showcase my work in IT, automation, and development">
-    <title>James Lindstrom | Testing Website</title>
+    <meta name="description" content="Welcome to my personal website - showcasing my work in IT, automation, and development">
+    <meta name="color-scheme" content="light dark">
+    <title>James Lindstrom | Personal Website</title>
     <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: white;
+            --nav-bg: white;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: rgba(0,0,0,0.1);
+            --border-color: #e9ecef;
+            --skill-card-bg: #f8f9fa;
+            --hover-bg: #f0f0f0;
+            --footer-bg: #333;
+            --footer-text: white;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --card-bg: #2d2d2d;
+            --nav-bg: #2d2d2d;
+            --primary-gradient: linear-gradient(135deg, #4a5568 0%, #553c9a 100%);
+            --shadow: rgba(0,0,0,0.3);
+            --border-color: #4a5568;
+            --skill-card-bg: #3a3a3a;
+            --hover-bg: #404040;
+            --footer-bg: #1a1a1a;
+            --footer-text: #e0e0e0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,8 +44,9 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -26,10 +56,11 @@
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
             padding: 2rem 0;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
@@ -42,13 +73,41 @@
             opacity: 0.9;
         }
 
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .theme-icon {
+            font-size: 1.2rem;
+        }
+
         nav {
-            background: white;
+            background: var(--nav-bg);
             padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: background-color 0.3s ease;
         }
 
         nav ul {
@@ -60,7 +119,7 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
             font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 5px;
@@ -68,7 +127,7 @@
         }
 
         nav a:hover {
-            background-color: #f0f0f0;
+            background-color: var(--hover-bg);
         }
 
         main {
@@ -76,17 +135,23 @@
         }
 
         section {
-            background: white;
+            background: var(--card-bg);
             margin: 2rem 0;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px var(--shadow);
+            transition: background-color 0.3s ease;
         }
 
         h2 {
             color: #667eea;
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+
+        [data-theme="dark"] h2 {
+            color: #9ca3af;
         }
 
         .skills-grid {
@@ -97,10 +162,15 @@
         }
 
         .skill-card {
-            background: #f8f9fa;
+            background: var(--skill-card-bg);
             padding: 1rem;
             border-radius: 8px;
             border-left: 4px solid #667eea;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        [data-theme="dark"] .skill-card {
+            border-left-color: #9ca3af;
         }
 
         .contact-form {
@@ -116,21 +186,29 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: #555;
+            color: var(--text-color);
+            transition: color 0.3s ease;
         }
 
         input, textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 2px solid #e9ecef;
+            border: 2px solid var(--border-color);
             border-radius: 5px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, background-color 0.3s ease, color 0.3s ease;
+            background-color: var(--card-bg);
+            color: var(--text-color);
         }
 
         input:focus, textarea:focus {
             outline: none;
             border-color: #667eea;
+        }
+
+        [data-theme="dark"] input:focus, 
+        [data-theme="dark"] textarea:focus {
+            border-color: #9ca3af;
         }
 
         textarea {
@@ -139,7 +217,7 @@
         }
 
         .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
             padding: 0.75rem 2rem;
             border: none;
@@ -154,11 +232,12 @@
         }
 
         footer {
-            background: #333;
-            color: white;
+            background: var(--footer-bg);
+            color: var(--footer-text);
             text-align: center;
             padding: 2rem 0;
             margin-top: 3rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .social-links {
@@ -166,7 +245,7 @@
         }
 
         .social-links a {
-            color: white;
+            color: var(--footer-text);
             text-decoration: none;
             margin: 0 1rem;
             opacity: 0.8;
@@ -180,6 +259,13 @@
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
+            }
+
+            .theme-toggle {
+                top: 0.5rem;
+                right: 0.5rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
             }
 
             nav ul {
@@ -196,11 +282,20 @@
                 padding: 1.5rem;
             }
         }
+
+        /* Smooth theme transition */
+        *, *::before, *::after {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-icon" id="themeIcon">🌙</span>
+                <span id="themeText">Dark</span>
+            </button>
             <h1>James Lindstrom</h1>
             <p>IT Professional | Aspiring Developer | Problem Solver</p>
         </div>
@@ -259,9 +354,9 @@
         <section id="contact">
             <h2>Get In Touch</h2>
             <div class="contact-form">
-                <p>Have a question or want to collaborate? Feel free to reach out!</p>
+                <p>Have any Questions? Feel free to reach out!</p>
                 
-                <form action="https://web3forms.com/submit" method="POST">
+                <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="72f58ea5-0126-4e65-9962-eec3d3b065c0">
                     
                     <div class="form-group">
@@ -294,14 +389,63 @@
         <div class="container">
             <p>&copy; 2025 James Lindstrom. All rights reserved.</p>
             <div class="social-links">
-                <a href="mailto:james@lindstrom.party">Email</a>
-                <a href="https://github.com/JLindstrom-US">GitHub</a>
-                <a href="https://www.linkedin.com/in/james-lindstrom/">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://github.com/yourusername">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
             </div>
         </div>
     </footer>
 
     <script>
+        // Dark mode functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        const body = document.body;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 
+                           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        // Apply the saved or detected theme
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+            themeText.textContent = 'Light';
+        }
+
+        // Theme toggle functionality
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Listen for OS theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    body.setAttribute('data-theme', 'dark');
+                    themeIcon.textContent = '☀️';
+                    themeText.textContent = 'Light';
+                } else {
+                    body.removeAttribute('data-theme');
+                    themeIcon.textContent = '🌙';
+                    themeText.textContent = 'Dark';
+                }
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -319,7 +463,6 @@
         // Form submission handling
         const form = document.querySelector('form');
         form.addEventListener('submit', function(e) {
-            // You can add custom validation or analytics here
             console.log('Form submitted');
         });
     </script>
