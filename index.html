@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to my personal website - showcasing my work in IT, automation, and development">
+    <meta name="description" content="James Lindstrom - IT Professional with 6+ years experience in system administration, automation, and technical support">
     <meta name="color-scheme" content="light dark">
-    <title>James Lindstrom | Personal Website</title>
+    <title>James Lindstrom | IT Professional & Aspiring Developer</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -26,13 +26,12 @@
             --text-color: #e0e0e0;
             --card-bg: #2d2d2d;
             --nav-bg: #2d2d2d;
-            --primary-gradient: linear-gradient(135deg, #4a5568 0%, #553c9a 100%);
+            --primary-gradient: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
             --shadow: rgba(0,0,0,0.3);
             --border-color: #4a5568;
-            --skill-card-bg: #3a3a3a;
-            --hover-bg: #404040;
+            --skill-card-bg: #2d2d2d;
+            --hover-bg: #3a3a3a;
             --footer-bg: #1a1a1a;
-            --footer-text: #e0e0e0;
         }
 
         * {
@@ -42,11 +41,11 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -56,121 +55,216 @@
         }
 
         header {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .theme-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
+            background: var(--nav-bg);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .theme-icon {
-            font-size: 1.2rem;
         }
 
         nav {
-            background: var(--nav-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 1rem 0;
-            box-shadow: 0 2px 4px var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            transition: background-color 0.3s ease;
         }
 
-        nav ul {
-            list-style: none;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
             display: flex;
-            justify-content: center;
+            list-style: none;
             gap: 2rem;
         }
 
-        nav a {
+        .nav-links a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: var(--hover-bg);
-        }
-
-        main {
-            padding: 3rem 0;
-        }
-
-        section {
-            background: var(--card-bg);
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px var(--shadow);
-            transition: background-color 0.3s ease;
-        }
-
-        h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
             transition: color 0.3s ease;
         }
 
-        [data-theme="dark"] h2 {
-            color: #9ca3af;
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--hover-bg);
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-gradient);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .skill-card {
             background: var(--skill-card-bg);
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
         }
 
-        [data-theme="dark"] .skill-card {
-            border-left-color: #9ca3af;
+        .skill-card:hover {
+            background: var(--hover-bg);
+            transform: translateY(-2px);
+        }
+
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-gradient);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid var(--card-bg);
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .company {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-item .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            margin-left: 1rem;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cert-badge {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
         }
 
         .contact-form {
@@ -179,41 +273,31 @@
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        label {
+        .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--text-color);
-            transition: color 0.3s ease;
         }
 
-        input, textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 0.75rem;
             border: 2px solid var(--border-color);
             border-radius: 5px;
             font-size: 1rem;
-            transition: border-color 0.3s, background-color 0.3s ease, color 0.3s ease;
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             color: var(--text-color);
+            transition: border-color 0.3s ease;
         }
 
-        input:focus, textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
-        }
-
-        [data-theme="dark"] input:focus, 
-        [data-theme="dark"] textarea:focus {
-            border-color: #9ca3af;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
         }
 
         .btn {
@@ -224,7 +308,7 @@
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.3s ease;
         }
 
         .btn:hover {
@@ -236,151 +320,215 @@
             color: var(--footer-text);
             text-align: center;
             padding: 2rem 0;
-            margin-top: 3rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .social-links {
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: var(--footer-text);
-            text-decoration: none;
-            margin: 0 1rem;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .social-links a:hover {
-            opacity: 1;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
-            header h1 {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
                 font-size: 2rem;
             }
-
-            .theme-toggle {
-                top: 0.5rem;
-                right: 0.5rem;
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Smooth theme transition */
-        *, *::before, *::after {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                <span class="theme-icon" id="themeIcon">🌙</span>
-                <span id="themeText">Dark Mode</span>
-            </button>
-            <h1>James Lindstrom</h1>
-            <p>IT Professional | Aspiring Developer | Problem Solver</p>
-        </div>
+        <nav class="container">
+            <div class="logo">James Lindstrom</div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </nav>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my personal website! I'm an IT Administrator with a passion for technology, automation, and continuous learning. I enjoy working on projects that combine low-level programming, automation, and 3D modeling to create innovative solutions.</p>
-            <p>When I'm not working on technology projects, I'm exploring new ways to turn my hobbies into potential income streams while helping others solve their technical challenges.</p>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>James Lindstrom</h1>
+                <p>IT Professional | System Administrator | Aspiring Developer</p>
+                <p>More than 6 Years of Experience in System Administration & Technical Support</p>
+            </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>IT Administration</h3>
-                    <p>System management, network configuration, and infrastructure maintenance</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Low-Level Programming</h3>
-                    <p>System programming, embedded development, and performance optimization</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Automation</h3>
-                    <p>Process automation, scripting, and workflow optimization</p>
-                </div>
-                <div class="skill-card">
-                    <h3>3D Modeling</h3>
-                    <p>CAD design, 3D printing, and digital prototyping</p>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="card">
+                    <p>I am a dedicated and driven Desktop Analyst with over 6 years of experience in installation, testing, and maintenance of software and hardware systems. I'm passionate about technology, automation, and continuous learning, with expertise in managing both independent and team projects while ensuring seamless operations and customer satisfaction.</p>
+                    <br>
+                    <p>Based in Maple Lake, MN, I specialize in tackling complex technical issues head-on, striving to exceed project expectations. When I'm not working, I enjoy persuing hobbies such as backpacking, fishing, 3d printing, and learning new things using my homelab.</p>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <p>Here are some of the projects I've been working on. Each project represents my commitment to learning new technologies and solving real-world problems.</p>
-            <ul>
-                <li><strong>Automation Scripts:</strong> Custom automation solutions for system administration tasks</li>
-                <li><strong>3D Models:</strong> Functional designs for practical applications</li>
-                <li><strong>Programming Projects:</strong> Low-level applications and system utilities</li>
-            </ul>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                <div class="card">
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <h3>Desk-Side Support</h3>
+                            <div class="company">Cetera - St. Cloud, MN</div>
+                            <div class="date">June 2025 - Current Position</div>
+                            <ul>
+                                <li>Provide Advance Support for Cetera Infrastructure and Users/Clients</li>
+                                <li>Extensively used Intune, Autopilot, and Microsoft Cloud</li>
+                                <li>Managed Users and Devices within AD, Exchange, SCCM, and Intune</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3>IT Help Desk Analyst</h3>
+                            <div class="company">MP NEXLEVEL, LLC – Annandale, MN</div>
+                            <div class="date">January 2023 – February 2025</div>
+                            <ul>
+                                <li>Provided Level 1 and Level 2 support for MPNexlevel and API Group Inc., resolving user issues efficiently</li>
+                                <li>Spearheaded various IT projects, demonstrating leadership and technical prowess</li>
+                                <li>Consistently maintained high customer satisfaction and quick resolution times</li>
+                                <li>Engaged in ongoing professional development, working toward advanced certifications</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3>Computer Technician</h3>
+                            <div class="company">Synergy Associates, LLC – Medina, MN</div>
+                            <div class="date">May 2021 – January 2023</div>
+                            <ul>
+                                <li>Configured and assembled HPE and Dell server solutions to meet client needs</li>
+                                <li>Diagnosed and resolved hardware and software problems swiftly and accurately</li>
+                                <li>Played a pivotal role in customer support and internal network management</li>
+                                <li>Oversaw high-value warehouse operations, ensuring accurate assembly, testing, and shipping</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3>IT Help Desk</h3>
+                            <div class="company">Ridgewater College – Hutchinson, MN</div>
+                            <div class="date">August 2019 – May 2021</div>
+                            <ul>
+                                <li>Managed walk-in helpdesk services, guiding students and addressing various technical issues</li>
+                                <li>Developed troubleshooting strategies for printers, cell phones, laptops, servers, and desktops</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h3>Electronics Diagnosis/Repair</h3>
+                            <div class="company">Walmart – Litchfield, MN</div>
+                            <div class="date">January 2017 – December 2019</div>
+                            <ul>
+                                <li>Diagnosed and repaired customer electronics, ensuring prompt and effective solutions</li>
+                                <li>Delivered exceptional customer service, often going above and beyond to resolve technical issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <div class="contact-form">
-                <p>Have any Questions? Feel free to reach out!</p>
-                
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="72f58ea5-0126-4e65-9962-eec3d3b065c0">
-                    
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Technical Skills & Interests</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Systems & Networking</h3>
+                        <p>Windows 10/11, Windows Server, Active Directory, Intune, Azure, Citrix, VPN, LAN/WAN, TCP/IP, VMware</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Tools & Platforms</h3>
+                        <p>ServiceNow, Microsoft Project, SharePoint, SQL, AutoCAD, Microsoft Office</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Hardware & Support</h3>
+                        <p>Desktop Support, Computer Hardware, Software Troubleshooting, Mobile Devices, Printers, A/V Equipment</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Low-Level Programming</h3>
+                        <p>System Programming, Embedded Development, and Performance Optimization</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Automation</h3>
+                        <p>Process Automation, Scripting, and Workflow Optimization</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>3D Modeling</h3>
+                        <p>CAD Design, 3D Printing, and Digital Prototyping</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Professional Skills</h3>
+                        <p>Customer Service, Student Mentorship, Time Management, Configuration Management, Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2>Certifications & Education</h2>
+                <div class="card">
+                    <h3>Professional Certifications</h3>
+                    <div class="certifications-grid">
+                        <div class="cert-badge">CompTIA A+</div>
+                        <div class="cert-badge">CompTIA Network+</div>
+                        <div class="cert-badge">CCNA</div>
+                        <div class="cert-badge">Fortinet NSE4 Network Security Professional</div>
+                        <div class="cert-badge">HPE Hybrid IT Solutions V2</div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    <h3 style="margin-top: 2rem;">Education</h3>
+                    <br>
+                    <div class="experience-item" style="margin-left: 0; padding-left: 0;">
+                        <div class="company">Associate's Degree in Information Technology</div>
+                        <div class="company">Ridgewater College – Hutchinson, MN</div>
+                        <div class="date">August 2019 – May 2021</div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required placeholder="What's this about?">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Your message..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <div class="contact-form">
+                    <p style="text-align: center; margin-bottom: 2rem;">Have any questions? Feel free to reach out!</p>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="72f58ea5-0126-4e65-9962-eec3d3b065c0">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message here." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -388,66 +536,38 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 James Lindstrom. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="mailto:james@lindstrom.party">Email</a>
-                <a href="https://github.com/JLindstrom-US">GitHub</a>
-                <a href="https://www.linkedin.com/in/james-lindstrom/">LinkedIn</a>
-            </div>
         </div>
     </footer>
 
     <script>
-        // Dark mode functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const themeText = document.getElementById('themeText');
-        const body = document.body;
-
-        // Check for saved theme preference or default to 'light'
-        const currentTheme = localStorage.getItem('theme') || 
-                           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-        // Apply the saved or detected theme
-        if (currentTheme === 'dark') {
-            body.setAttribute('data-theme', 'dark');
-            themeIcon.textContent = '☀️';
-            themeText.textContent = 'Light Mode';
-        }
-
-        // Theme toggle functionality
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
             
-            if (currentTheme === 'dark') {
+            if (body.hasAttribute('data-theme')) {
                 body.removeAttribute('data-theme');
-                themeIcon.textContent = '🌙';
-                themeText.textContent = 'Dark Mode';
+                themeToggle.textContent = '🌙';
                 localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
-                themeText.textContent = 'Light Mode';
+                themeToggle.textContent = '☀️';
                 localStorage.setItem('theme', 'dark');
             }
-        });
+        }
 
-        // Listen for OS theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                if (e.matches) {
-                    body.setAttribute('data-theme', 'dark');
-                    themeIcon.textContent = '☀️';
-                    themeText.textContent = 'Light Mode';
-                } else {
-                    body.removeAttribute('data-theme');
-                    themeIcon.textContent = '🌙';
-                    themeText.textContent = 'Dark Mode';
-                }
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.querySelector('.theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
             }
         });
 
         // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -458,12 +578,6 @@
                     });
                 }
             });
-        });
-
-        // Form submission handling
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            console.log('Form submitted');
         });
     </script>
 </body>
