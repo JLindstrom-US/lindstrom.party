@@ -294,7 +294,7 @@
         <div class="container">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                 <span class="theme-icon" id="themeIcon">🌙</span>
-                <span id="themeText">Dark</span>
+                <span id="themeText">Dark Mode</span>
             </button>
             <h1>James Lindstrom</h1>
             <p>IT Professional | Aspiring Developer | Problem Solver</p>
@@ -387,11 +387,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 James Lindstrom. All rights reserved.</p>
+            <p>&copy; 2025 James Lindstrom. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://github.com/yourusername">GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                <a href="mailto:james@lindstrom.party">Email</a>
+                <a href="https://github.com/JLindstrom-US">GitHub</a>
+                <a href="https://www.linkedin.com/in/james-lindstrom/">LinkedIn</a>
             </div>
         </div>
     </footer>
@@ -411,7 +411,7 @@
         if (currentTheme === 'dark') {
             body.setAttribute('data-theme', 'dark');
             themeIcon.textContent = '☀️';
-            themeText.textContent = 'Light';
+            themeText.textContent = 'Light Mode';
         }
 
         // Theme toggle functionality
@@ -421,12 +421,12 @@
             if (currentTheme === 'dark') {
                 body.removeAttribute('data-theme');
                 themeIcon.textContent = '🌙';
-                themeText.textContent = 'Dark';
+                themeText.textContent = 'Dark Mode';
                 localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
                 themeIcon.textContent = '☀️';
-                themeText.textContent = 'Light';
+                themeText.textContent = 'Light Mode';
                 localStorage.setItem('theme', 'dark');
             }
         });
@@ -437,11 +437,11 @@
                 if (e.matches) {
                     body.setAttribute('data-theme', 'dark');
                     themeIcon.textContent = '☀️';
-                    themeText.textContent = 'Light';
+                    themeText.textContent = 'Light Mode';
                 } else {
                     body.removeAttribute('data-theme');
                     themeIcon.textContent = '🌙';
-                    themeText.textContent = 'Dark';
+                    themeText.textContent = 'Dark Mode';
                 }
             }
         });
